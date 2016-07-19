@@ -2,9 +2,6 @@
 <head>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="js/angular.min.js"></script>
-	<script src="js/ng-file-upload.min.js"></script>
-	<script src="js/ng-file-upload-shim.min.js"></script>
-	<script src="js/tag-file.js"></script>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 
@@ -15,5 +12,19 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 </head>
 <body ng-app="genApp">
+  <div ng-controller="uberCtrl">
+    <div>
+      <h3> Set pickup </h3>
+      <input type="text" ng-model="deeplink.data.action" hidden value="setPickup">
+      <input type="text" ng-model="deeplink.data.product_id" hidden value="a1111c8c-c720-46c3-8534-2fcdd730040d">
+      <input type="text" ng-model="deeplink.data.pickup.latitude">
+      <input type="text" ng-model="deeplink.data.pickup.longitude">
+      <br>
+      <input type="text" ng-model="deeplink.data.dropoff.latitude">
+      <input type="text" ng-model="deeplink.data.dropoff.longitude">
+      <br>
+      <input type="button" ng-click="deeplink.req(deeplink.data)" value="Request">
+    </div>
+  </div>
 </body>
 </html>
