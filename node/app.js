@@ -20,6 +20,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+global.cwd = __dirname;
+
 /*app.use(multer({
 	dest: './public/uploads/',
 	onFileUploadComplete: function (file) {
@@ -38,7 +40,7 @@ var Models = require("./models");
 var _ = require("underscore");
 var Q = require("q");
 
-app.get('/uber', require('./routes/uber'));
+app.use('/uber', require('./routes/uber'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -2,6 +2,7 @@
 <head>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="js/angular.min.js"></script>
+  <script src="js/uber.controller.js"></script>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 
@@ -13,18 +14,20 @@
 </head>
 <body ng-app="genApp">
   <div ng-controller="uberCtrl">
-    <div>
+    <center>
+      <div>
       <h3> Set pickup </h3>
-      <input type="text" ng-model="deeplink.data.action" hidden value="setPickup">
-      <input type="text" ng-model="deeplink.data.product_id" hidden value="a1111c8c-c720-46c3-8534-2fcdd730040d">
+      <br>
       <input type="text" ng-model="deeplink.data.pickup.latitude">
       <input type="text" ng-model="deeplink.data.pickup.longitude">
-      <br>
+      <br><br>
       <input type="text" ng-model="deeplink.data.dropoff.latitude">
       <input type="text" ng-model="deeplink.data.dropoff.longitude">
-      <br>
+      <br><br>
+      <br><br>
       <input type="button" ng-click="deeplink.req(deeplink.data)" value="Request">
     </div>
+  </center>
   </div>
 </body>
 </html>
